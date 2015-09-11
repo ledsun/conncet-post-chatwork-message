@@ -1,0 +1,37 @@
+{
+  "name": "conncet-post-chatwork-message",
+  "description": "This is middleware for [conncet](https://github.com/senchalabs/connect). This post message to [Chatwork](chatwork.com) according to a chatwork property of request.",
+  "version": "0.0.1",
+  "author": "ledsun",
+  "bugs": {
+    "url": "https://github.com/ledsun/conncet-post-chatwork-message/issues"
+  },
+  "dependencies": {
+    "post-chatwork-message": "^0.1.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23"
+  },
+  "files": [
+    "README.md",
+    "lib.js",
+    "package.json"
+  ],
+  "homepage": "https://github.com/ledsun/conncet-post-chatwork-message#readme",
+  "keywords": [
+    "chatwork",
+    "conncet",
+    "message",
+    "post"
+  ],
+  "license": "MIT",
+  "main": "lib.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ledsun/conncet-post-chatwork-message.git"
+  },
+  "scripts": {
+    "prepublish": "npm start",
+    "start": "babel src.js -o lib.js"
+  }
+}
