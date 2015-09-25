@@ -3,6 +3,7 @@ import postChatwork from './src'
 import http from "http"
 import request from 'superagent'
 import assert from 'power-assert'
+import postChatworkMessage from 'post-chatwork-message'
 
 describe('conncet-post-chatwork-message', () => {
   let server
@@ -21,12 +22,9 @@ describe('conncet-post-chatwork-message', () => {
 
     server = http.createServer(app).listen(3000, () => {
       // Flush messages before test.
-      request
-        .get(`https://api.chatwork.com/v1/rooms/${process.env.CHATWORK_ROOM_ID}/messages`)
-        .set('X-ChatWorkToken', process.env.CHATWORK_TOKEN)
-        .end((err, res) => {
-          done()
-        })
+      postChatworkMessage
+        .getRecents(process.env.CHATWORK_TOKEN, process.env.CHATWORK_ROOM_ID)
+        .then(() => done())
     })
   })
 
@@ -41,10 +39,9 @@ describe('conncet-post-chatwork-message', () => {
         assert.equal(err, null)
 
         // Get messages after previous request by the ChatWork API.
-        request
-          .get(`https://api.chatwork.com/v1/rooms/${process.env.CHATWORK_ROOM_ID}/messages`)
-          .set('X-ChatWorkToken', process.env.CHATWORK_TOKEN)
-          .end((err, res) => {
+        postChatworkMessage
+          .getRecents(process.env.CHATWORK_TOKEN, process.env.CHATWORK_ROOM_ID)
+          .then((res) => {
             assert.equal(res.body.length, 1)
             assert.equal(res.body[0].body, 'test message')
             done()

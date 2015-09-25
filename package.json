@@ -7,7 +7,7 @@
     "url": "https://github.com/ledsun/conncet-post-chatwork-message/issues"
   },
   "dependencies": {
-    "post-chatwork-message": "^0.1.0"
+    "post-chatwork-message": "^0.1.2"
   },
   "devDependencies": {
     "babel": "^5.8.23",
