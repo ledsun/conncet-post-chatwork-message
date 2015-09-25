@@ -65,3 +65,8 @@ Send a request
 ```
 curl -X GET http://localhost:3000
 ```
+
+# test
+```
+env CHATWORK_TOKEN=YOUR_TOKEN CHATWORK_ROOM_ID=YOUR_ROOM_ID npm test
+```

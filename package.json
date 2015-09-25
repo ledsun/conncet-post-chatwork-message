@@ -10,7 +10,12 @@
     "post-chatwork-message": "^0.1.0"
   },
   "devDependencies": {
-    "babel": "^5.8.23"
+    "babel": "^5.8.23",
+    "connect": "^3.4.0",
+    "espower-babel": "^3.3.0",
+    "mocha": "^2.3.3",
+    "power-assert": "^1.0.1",
+    "superagent": "^1.4.0"
   },
   "files": [
     "README.md",
@@ -32,6 +37,7 @@
   },
   "scripts": {
     "prepublish": "npm start",
-    "start": "babel src.js -o lib.js"
+    "start": "babel src.js -o lib.js",
+    "test": "mocha --require espower-babel/guess"
   }
 }
