@@ -1,7 +1,7 @@
 {
   "name": "conncet-post-chatwork-message",
   "description": "This is middleware for [conncet](https://github.com/senchalabs/connect). This post message to [Chatwork](chatwork.com) according to a chatwork property of request.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "ledsun",
   "bugs": {
     "url": "https://github.com/ledsun/conncet-post-chatwork-message/issues"
